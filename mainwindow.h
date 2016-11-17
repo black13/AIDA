@@ -19,6 +19,7 @@ public:
 private slots:
     void cam();
     void stop();
+    void mic();
     void updatecam(QImage img);
 private:
     Ui::MainWindow *ui;

@@ -12,11 +12,17 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    //Signal and Slot
     connect(ui->pushButton,SIGNAL(clicked(bool)),this, SLOT(cam()));
     connect(ui->pushButton_2,SIGNAL(clicked(bool)),this,SLOT(stop()));
+    connect(ui->pushButton_3,SIGNAL(clicked(bool)),this,SLOT(mic()));
     camera_.connect(&camera_,SIGNAL(update(QImage)),this,SLOT(updatecam(QImage)));
-    //ui->label->pixmap("sami.jpg"); 
-    //ui->label->setPixmap(QPixmap(QString::fromUtf8("/home/codematrix/webcam/sami.jpg")));
+
+
+    //Settings
+    //Label background nero con bordo nero
+    ui->label->setStyleSheet( "border: 1px solid #0000FF; background-color: black; border-radius: 150px;" );
 }
 void MainWindow::cam(){
     //Bisogno di un thread
@@ -35,7 +41,11 @@ void MainWindow::stop(){
    //CameraThread_.quit();
    //CameraThread_.wait();
 }
-
+void MainWindow::mic(){
+    QMessageBox messageBox;
+    //messageBox.critical(0,"Error","An error has occured !");
+    messageBox.information(0,"In Develop","Feature in developing");
+}
 MainWindow::~MainWindow()
 {
     camera_.~Camera();

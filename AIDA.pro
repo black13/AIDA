@@ -24,4 +24,5 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui
 
-DISTFILES +=
+DISTFILES += \
+    img/favicon.ico

@@ -21,11 +21,6 @@ void Camera::run()
         timer_.start(0, this);
         emit started();
     }
-
-
-    //QMessageBox messageBox;
-    //messageBox.critical(0,"Error","An error has occured !");
-    //messageBox.information(0,"Aggiornamenti","Proprietà ancora non disponibile");
 }
 
 void Camera::stop()
@@ -48,7 +43,9 @@ void Camera::timerEvent(QTimerEvent *ev)
     }
     ;
     //MainWindow::MainWindow::updatecam();
-    emit update(Camera::MatToQImage(frame));
+                                                 //width,height del label ui->label
+    emit update(Camera::MatToQImage(frame).scaled(451,271,Qt::IgnoreAspectRatio, Qt::FastTransformation ));
+    //emit update(Camera::MatToQImage(frame));
 }
 
 QImage Camera::MatToQImage(const cv::Mat& frame)
@@ -81,4 +78,7 @@ QImage Camera::MatToQImage(const cv::Mat& frame)
 //        qDebug() << "ERROR: Mat could not be converted to QImage.";
         return QImage();
     }
+}
+QImage Camera::resize(QImage){
+    //Solo webcam resize qui con il facedetector resize sul facedetector
 }

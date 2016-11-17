@@ -44,5 +44,6 @@ signals:
     QImage update(QImage);
 private:
     void timerEvent(QTimerEvent * ev);
+    QImage resize(QImage);
 };
 #endif /* !CAMERA_H */
