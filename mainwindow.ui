@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>682</width>
-    <height>421</height>
+    <height>385</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <normaloff>img/favicon.ico</normaloff>img/favicon.ico</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="cam_button">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -31,7 +31,7 @@
      <string>Cam</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="camview_label">
     <property name="geometry">
      <rect>
       <x>220</x>
@@ -47,7 +47,7 @@
      <pixmap>../Downloads/210619_4204014631089_1495426602_o.jpg</pixmap>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="stopcam_button">
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -60,10 +60,10 @@
      <string>StopCam</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="mic_button">
     <property name="geometry">
      <rect>
-      <x>610</x>
+      <x>640</x>
       <y>290</y>
       <width>41</width>
       <height>41</height>
@@ -76,11 +76,24 @@
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>32</x>
+      <x>10</x>
       <y>290</y>
       <width>571</width>
       <height>41</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="talk_button">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>290</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TALK</string>
     </property>
    </widget>
   </widget>

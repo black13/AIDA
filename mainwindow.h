@@ -20,12 +20,12 @@ private slots:
     void cam();
     void stop();
     void mic();
+    void talk();
     void updatecam(QImage img);
 private:
     Ui::MainWindow *ui;
     QThread CameraThread_;
     Camera camera_;
-    //Camera* camera_;
 };
 
 #endif // MAINWINDOW_H

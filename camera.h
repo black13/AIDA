@@ -23,7 +23,6 @@ class Camera:public QObject{
     Q_OBJECT
     QScopedPointer<cv::VideoCapture> cap;
     QBasicTimer timer_;
-    //QTimer timer_(this);
     int cameraIndex_;
 
 public:
@@ -33,7 +32,6 @@ public:
         cameraIndex_ = camera_index;
     }
     ~Camera();
-    //QImage update(const cv::Mat& frame);
     void update();
 public slots:
     void run();
@@ -44,6 +42,5 @@ signals:
     QImage update(QImage);
 private:
     void timerEvent(QTimerEvent * ev);
-    QImage resize(QImage);
 };
 #endif /* !CAMERA_H */

@@ -34,18 +34,15 @@ void Camera::timerEvent(QTimerEvent *ev)
     if (ev->timerId() != timer_.timerId())
         return;
     cv::Mat frame;
-    //
-     //->setPixmap(QPixmap::fromImage(this->MatToQImage(cv::Mat& frame)));
     if (!cap->read(frame)) // Blocks until a new frame is ready
     {
         timer_.stop();
         return;
     }
     ;
-    //MainWindow::MainWindow::updatecam();
                                                  //width,height del label ui->label
     emit update(Camera::MatToQImage(frame).scaled(451,271,Qt::IgnoreAspectRatio, Qt::FastTransformation ));
-    //emit update(Camera::MatToQImage(frame));
+    //emit update(Camera::MatToQImage(frame)); //Example not scaled
 }
 
 QImage Camera::MatToQImage(const cv::Mat& frame)
@@ -79,6 +76,4 @@ QImage Camera::MatToQImage(const cv::Mat& frame)
         return QImage();
     }
 }
-QImage Camera::resize(QImage){
-    //Solo webcam resize qui con il facedetector resize sul facedetector
-}
+
