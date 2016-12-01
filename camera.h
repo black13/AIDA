@@ -27,12 +27,13 @@ class Camera:public QObject{
 
 public:
     //Webcam standard implementare cam diversa
-    Camera(int camera_index=0, QObject* parent=0) : QObject(parent)
+    Camera(int camera_index = 0, QObject* parent=0) : QObject(parent)
     {
         cameraIndex_ = camera_index;
     }
     ~Camera();
     void update();
+    bool running = 0;
 public slots:
     void run();
     void stop();

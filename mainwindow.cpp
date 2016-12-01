@@ -33,7 +33,9 @@ void MainWindow::updatecam(QImage img){
     ui->camview_label->setPixmap(QPixmap::fromImage(img));
 }
 void MainWindow::stop(){
-   camera_.stop();
+   if (camera_.running){
+    camera_.stop();
+   }
    //Pulisco il label
    ui->camview_label->clear();
    //CameraThread_.quit();

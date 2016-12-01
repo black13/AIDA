@@ -8,6 +8,7 @@ Camera::~Camera()
 
 void Camera::run()
 {
+    running = 1;
     if (!cap)
     {
         cap.reset(new cv::VideoCapture(cameraIndex_));
@@ -76,4 +77,5 @@ QImage Camera::MatToQImage(const cv::Mat& frame)
         return QImage();
     }
 }
+
 
