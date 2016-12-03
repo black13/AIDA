@@ -24,6 +24,7 @@ class Camera:public QObject{
     QScopedPointer<cv::VideoCapture> cap;
     QBasicTimer timer_;
     int cameraIndex_;
+    cv::CascadeClassifier faceCascade;
 
 public:
     //Webcam standard implementare cam diversa
@@ -34,14 +35,17 @@ public:
     ~Camera();
     void update();
     bool running = 0;
+    bool facedetect = 0;
 public slots:
     void run();
     void stop();
-    QImage MatToQImage(const cv::Mat& mat);
+    QImage facedetector(cv::Mat mat);
+    QImage MatToQImage(cv::Mat mat);
 signals:
     void started();
     QImage update(QImage);
 private:
     void timerEvent(QTimerEvent * ev);
+
 };
 #endif /* !CAMERA_H */

@@ -21,6 +21,7 @@ private slots:
     void stop();
     void mic();
     void talk();
+    void facedetect();
     void updatecam(QImage img);
 private:
     Ui::MainWindow *ui;

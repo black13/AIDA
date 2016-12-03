@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->stopcam_button,SIGNAL(clicked(bool)),this,SLOT(stop()));
     connect(ui->mic_button,SIGNAL(clicked(bool)),this,SLOT(mic()));
     connect(ui->talk_button,SIGNAL(clicked(bool)),this,SLOT(talk()));
+    connect(ui->facedetect_button,SIGNAL(clicked(bool)),this,SLOT(facedetect()));
     camera_.connect(&camera_,SIGNAL(update(QImage)),this,SLOT(updatecam(QImage)));
 
 
@@ -24,7 +25,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->camview_label->setStyleSheet( "border: 1px solid #0000FF; background-color: black; border-radius: 150px;" );
 }
 void MainWindow::cam(){
-    camera_.run();
+    if(camera_.running == 0)
+        camera_.run();
     //Thread non workano da controllare piu avanti
     //CameraThread_.start();
     //camera_.moveToThread(&CameraThread_);
@@ -49,6 +51,16 @@ void MainWindow::mic(){
 void MainWindow::talk(){
     QMessageBox messageBox;
     messageBox.information(0,"In Develop","Feature in developing");
+}
+void MainWindow::facedetect(){
+    if(camera_.running){
+        if(camera_.facedetect == 1){
+            camera_.facedetect = 0;
+        }
+        else{
+            camera_.facedetect = 1;
+        }
+    }
 }
 MainWindow::~MainWindow()
 {
