@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "camera.h"
 #include <QThread>
+#include <QTextToSpeech>
 
 namespace Ui {
 class MainWindow;
@@ -27,6 +28,7 @@ private:
     Ui::MainWindow *ui;
     QThread CameraThread_;
     Camera camera_;
+    QTextToSpeech m_speech;
 };
 
 #endif // MAINWINDOW_H

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>682</width>
-    <height>385</height>
+    <height>458</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -34,9 +34,9 @@
    <widget class="QLabel" name="camview_label">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>210</x>
       <y>0</y>
-      <width>451</width>
+      <width>461</width>
       <height>271</height>
      </rect>
     </property>
@@ -63,7 +63,7 @@
    <widget class="QPushButton" name="mic_button">
     <property name="geometry">
      <rect>
-      <x>640</x>
+      <x>630</x>
       <y>290</y>
       <width>41</width>
       <height>41</height>
@@ -73,7 +73,7 @@
      <string>MIC</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="mic_line">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -82,12 +82,15 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="talk_button">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>290</y>
+      <x>630</x>
+      <y>350</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -115,6 +118,16 @@
      <string>FaceDetect</string>
     </property>
    </widget>
+   <widget class="QLineEdit" name="talk_line">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>350</y>
+      <width>571</width>
+      <height>41</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -122,7 +135,7 @@
      <x>0</x>
      <y>0</y>
      <width>682</width>
-     <height>20</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>
