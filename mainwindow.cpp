@@ -14,10 +14,10 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->cam_button,SIGNAL(clicked(bool)),this, SLOT(cam()));
     connect(ui->stopcam_button,SIGNAL(clicked(bool)),this,SLOT(stop()));
     connect(ui->mic_button,SIGNAL(clicked(bool)),this,SLOT(mic()));
-    connect(ui->talk_button,SIGNAL(clicked(bool)),this,SLOT(talk()));
+    //connect(ui->talk_button,SIGNAL(clicked(bool)),this,SLOT(talk()));
     connect(ui->facedetect_button,SIGNAL(clicked(bool)),this,SLOT(facedetect()));
     camera_.connect(&camera_,SIGNAL(update(QImage)),this,SLOT(updatecam(QImage)));
-    m_speech.setVolume(100.0);
+    //m_speech.setVolume(100.0);
     //Settings
     //Label background nero con bordo nero
     ui->camview_label->setStyleSheet( "border: 1px solid #0000FF; background-color: black; border-radius: 150px;" );
@@ -53,7 +53,7 @@ void MainWindow::talk(){
         QMessageBox messageBox;
         messageBox.information(0,"Error","Impossibile usare talk se talk_line e vuoto");        
     }else{
-        m_speech.say(ui->talk_line->text());        
+      //m_speech.say(ui->talk_line->text());        
     }
 
 

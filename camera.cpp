@@ -56,19 +56,19 @@ void Camera::timerEvent(QTimerEvent *ev)
 QImage Camera::facedetector(cv::Mat frame)
 {
     cv::Mat grey_image;
-    cv::cvtColor(frame, grey_image, CV_BGR2GRAY);
+    cv::cvtColor(frame, grey_image, cv::COLOR_BGR2GRAY);
     cv::equalizeHist(grey_image, grey_image);
 
     std::vector<cv::Rect> faces;
     // Calculate the camera size and set the size to 1/8 of screen height
-    faceCascade.detectMultiScale(grey_image, faces, 1.1, 2,  0|CV_HAAR_SCALE_IMAGE,
-                                 cv::Size(frame.cols/4, frame.rows/4)); // Minimum size of obj
+    //faceCascade.detectMultiScale(grey_image, faces, 1.1, 2,  0|cv::CASCADE_SCALE_IMAGE,
+    //                             cv::Size(frame.cols/4, frame.rows/4)); // Minimum size of obj
     //-- Draw rectangles around faces
-    for( size_t i = 0; i < faces.size(); i++)
-    {
-        cv::rectangle(frame, faces[i], cv::Scalar( 255, 0, 255 ));
-
-    }
+    //for( size_t i = 0; i < faces.size(); i++)
+    //{
+    //    cv::rectangle(frame, faces[i], cv::Scalar( 255, 0, 255 ));
+    //
+    //}
     /*
     cv::cvtColor(frame, frame, cv::COLOR_BGR2RGB);
 

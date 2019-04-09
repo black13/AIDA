@@ -1,0 +1,6 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+  <file>resource/img/favicon.ico</file>
+  <file>resource/cascade/haarcascade_frontalface_default.xml</file>
+</qresource>
+</RCC>
